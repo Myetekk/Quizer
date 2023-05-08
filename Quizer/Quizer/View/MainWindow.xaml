@@ -1,0 +1,219 @@
+﻿<Window x:Class="Quizer.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Quizer"
+        xmlns:prop="clr-namespace:Quizer.Properties"
+        xmlns:vm="clr-namespace:Quizer.ViewModel"
+        
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+
+    
+    <Window.DataContext>
+        <vm:MainViewModel x:Name="viewModel"/>
+    </Window.DataContext>
+
+
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="5*" />
+        </Grid.RowDefinitions>
+
+
+
+
+        <Border BorderBrush="#828282" BorderThickness="2">
+            <Grid Grid.Row="0" Margin="5"> <!-- top bar -->
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="3*"/> <!-- title -->
+                    <ColumnDefinition Width="2*"/> <!-- clock -->
+                    <ColumnDefinition Width="5*"/> <!-- start stop -->
+                </Grid.ColumnDefinitions>
+
+
+
+                <Grid Grid.Column="0" Margin="5"> <!-- question list  -->
+                    <ComboBox Name="question_list" Height="25">
+                        <ComboBoxItem Content="Coffie"></ComboBoxItem>
+                        <ComboBoxItem Content="Tea"></ComboBoxItem>
+                        <ComboBoxItem Content="Orange Juice"></ComboBoxItem>
+                        <ComboBoxItem Content="Milk"></ComboBoxItem>
+                        <ComboBoxItem Content="Iced Tea"></ComboBoxItem>
+                        <ComboBoxItem Content="Mango Shake"></ComboBoxItem>
+                    </ComboBox>
+                </Grid>
+
+
+
+                
+                <Grid Grid.Column="1" Margin="5"> <!-- clock -->
+                    <Border BorderBrush="#828282" BorderThickness="1,0,1,0">
+                        <!--<TextBlock x:Name="clock" 
+                                   Margin="5"
+                                   Text="{Binding CurrentTime}"
+                        />-->
+
+                        <Label Name="lblTime" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </Border>
+                </Grid>
+
+
+
+                <Grid Grid.Column="2" Margin="5"> <!-- start stop -->
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid Grid.Column="0">
+                        <Button x:Name="button_start"
+                                    Content="Rozpocznij"
+                                    Margin="2"
+                                    Command="{Binding Info_read}"
+                        />
+                    </Grid> 
+
+                    <Grid Grid.Column="1">
+                        <Button x:Name="button_stop"
+                                    Content="Zakończ"
+                                    Margin="2"
+                                    Command="{Binding Info_clear}"
+                        />
+                    </Grid>
+                </Grid>
+            </Grid>
+        </Border>
+
+
+
+
+        <Grid Grid.Row="1"> <!-- container -->
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/> <!-- question list -->
+                <ColumnDefinition Width="4*"/> <!-- main container -->
+            </Grid.ColumnDefinitions>
+
+
+
+            <Border BorderBrush="#828282" BorderThickness="0,0,2,0">
+                <Grid Grid.Row="0" Margin="5"> <!-- title -->
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="3*"/> <!-- question -->
+                        <RowDefinition Height="1*"/> <!-- next question -->
+                        <RowDefinition Height="1*"/> <!-- previous question -->
+                    </Grid.RowDefinitions>
+
+
+                    <Grid Grid.Row="0" Margin="5"> <!-- question -->
+                        <Border BorderBrush="#828282" BorderThickness="0,0,0,1">
+                            <StackPanel>
+                                <TextBlock x:Name="title" 
+                                            Margin="0,0,0,10"
+                                            Text="{Binding Info[0]}"
+                                />
+                                <TextBlock x:Name="question_name" 
+                                            Margin="0,0,0,10"
+                                            Text="{Binding Info[1]}"
+                                />
+                                <TextBlock x:Name="score" 
+                                            Margin="0,0,0,10"
+                                            Text="{Binding Info[2]}"
+                                />
+                            </StackPanel>
+                        </Border>
+                    </Grid>
+
+
+                    <Grid Grid.Row="1" Margin="5"> <!-- next question -->
+                        <Button x:Name="button_next"
+                                Content="Następne pytanie"
+                                Margin="2"
+                                Command="{Binding Info_next_question}"
+                        />
+                    </Grid>
+
+
+                    <Grid Grid.Row="2" Margin="5"> <!-- previous question -->
+                        <Button x:Name="button_previous"
+                                Content="Poprzednie pytanie"
+                                Margin="2"
+                                Command="{Binding Info_previous_question}"
+                        />
+                    </Grid>
+                    
+                </Grid>
+            </Border>
+
+
+
+            <Grid Grid.Column="1" Margin="5"> <!-- main container -->
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="3*"/> <!-- question -->
+                    <RowDefinition Height="2*"/> <!-- answers -->
+                </Grid.RowDefinitions>
+
+
+                <Grid Grid.Row="0" Margin="5"> <!-- question -->
+                    <Border BorderBrush="#828282" BorderThickness="0,0,0,1">
+                        <TextBlock x:Name="question"
+                                   Text="{Binding Info[3]}"
+                        />
+                    </Border>
+                </Grid>
+
+
+
+                <Grid Grid.Row="1" Margin="5"> <!-- answers -->
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                    </Grid.RowDefinitions>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+
+
+
+                    <Grid Grid.Row="0" Grid.Column="0">
+                        <Button x:Name="answer_1"
+                                    Margin="2"
+                                    Content="{Binding Info[4]}"
+                                    Command="{Binding Answer_1}"
+                         />
+                    </Grid>
+
+                    <Grid Grid.Row="0" Grid.Column="2">
+                        <Button x:Name="answer_2"
+                                    Margin="2"
+                                    Content="{Binding Info[5]}"
+                                    Command="{Binding Answer_1}"
+                        />
+                    </Grid>
+
+                    <Grid Grid.Row="1" Grid.Column="0">
+                        <Button x:Name="answer_3"
+                                    Margin="2"
+                                    Content="{Binding Info[6]}"
+                                    Command="{Binding Answer_1}"
+                        />
+                    </Grid>
+
+                    <Grid Grid.Row="1" Grid.Column="1">
+                        <Button x:Name="answer_4"
+                                    Margin="2"
+                                    Content="{Binding Info[7]}"
+                                    Command="{Binding Answer_1}"
+                        />
+                    </Grid>
+                </Grid>
+            </Grid>
+            
+        </Grid>
+    </Grid>
+</Window>
