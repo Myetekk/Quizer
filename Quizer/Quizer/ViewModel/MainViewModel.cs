@@ -5,15 +5,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using System.Data.SQLite;
 using System.Windows.Threading;
+using System.Collections.ObjectModel;
 
 namespace Quizer.ViewModel
 {
     using BaseClass;
+    using Quizer.Model;
+
     class MainViewModel: INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
-        private Model.Quiz info_class = new Model.Quiz();
+        public Model.Quiz info_class = new Model.Quiz();
+        public string selected;
+        public string[] items_in_combobox;
 
         private static bool isRun_start = true;
         private static bool isRun_stop = false;
@@ -41,12 +47,14 @@ namespace Quizer.ViewModel
         {
             get { return info_read ?? (info_read = new BaseClass.RelayCommand( (p) => { 
                 Info = info_class.read();
+                Quizes.Clear();
 
                 isRun_start = false;
                 isRun_stop = true;
                 isRun_next_question = true;
                 isRun_previous_question = false;
                 isRun_answers = true;
+                check_next_prev();
 
                 MainWindow.time = Convert.ToDateTime("5/7/2023 0:0:0");
                 MainWindow.timer.Start();
@@ -80,18 +88,9 @@ namespace Quizer.ViewModel
         {
             get { return info_next_question ?? (info_next_question = new BaseClass.RelayCommand( (p) => { 
                 info_class.next_question();
-
                 Info = info_class.read();
 
-                if (info_class.integer == info_class.question_number)
-                    isRun_next_question = false;
-                else
-                    isRun_next_question = true;
-
-                if (info_class.integer == 1)
-                    isRun_previous_question = false;
-                else
-                    isRun_previous_question = true;
+                check_next_prev();
             },  p => isRun_next_question) ); }
         }
 
@@ -101,19 +100,30 @@ namespace Quizer.ViewModel
         {
             get { return info_previous_question ?? (info_previous_question = new BaseClass.RelayCommand( (p) => { 
                 info_class.previous_question(); 
-
                 Info = info_class.read();
 
-                if (info_class.integer == 1)
-                    isRun_previous_question = false;
-                else
-                    isRun_previous_question = true;
-
-                if (info_class.integer == info_class.question_number)
-                    isRun_next_question = false;
-                else
-                    isRun_next_question = true;
+                check_next_prev();
             },  p => isRun_previous_question) ); }
+        }
+
+
+        private void check_next_prev()
+        {
+            if (info_class.integer == 1)
+                isRun_previous_question = false;
+            else
+                isRun_previous_question = true;
+
+            if (info_class.integer == info_class.question_number)
+                isRun_next_question = false;
+            else
+                isRun_next_question = true;
+
+            if (info_class.question_number == 1)
+            {
+                isRun_next_question = false;
+                isRun_previous_question = false;
+            }
         }
 
 
@@ -170,20 +180,61 @@ namespace Quizer.ViewModel
 
 
 
-        private ICommand answer_1_color;
-        public ICommand Answer_1_color
+
+        private ObservableCollection<Quiz_list> quizes = new ObservableCollection<Quiz_list>();
+        public ObservableCollection<Quiz_list> Quizes
         {
-            get
-            {
-                return answer_1_color ?? (answer_1_color = new BaseClass.RelayCommand((p) => {
-                    //info_class.answering(1);
-                    //info_class.answers_checked[info_class.integer]
-
-
-
-                    //Info = info_class.read();
-                }, p => isRun_answers));
+            get { return quizes; }
+            set { quizes = value; }
+        }
+        private Quiz_list selectedItem = new Quiz_list();
+        public Quiz_list SelectedItem
+        {
+            get { return selectedItem; }
+            set { 
+                selectedItem = value;
+                if (value != null)
+                {
+                    info_class.quiz_selected = value.ToString();
+                    selected = value.ToString();
+                }
             }
+        }
+
+
+
+        public MainViewModel()
+        {
+            SQLiteConnection conn = new SQLiteConnection(@"Data Source=D:\MYETEK\Pulpit\data_base.db; Version=3");
+            SQLiteDataReader reader;
+            SQLiteCommand command;
+            string result;
+            long ile;
+            int i = 0;
+
+            conn.Open();
+            command = conn.CreateCommand();
+            command.CommandText = $"SELECT count(*) as ile FROM sqlite_master";
+            reader = command.ExecuteReader();
+            reader.Read();
+            ile = (long)reader["ile"];
+            items_in_combobox = new string[ile];
+            conn.Close();
+
+            conn.Open();
+            command = conn.CreateCommand();
+            command.CommandText = $"SELECT name FROM sqlite_master WHERE type = 'table' and name like 'quiz%' ";
+            reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                result = (string)reader["name"];
+                items_in_combobox[i] = result;
+                Quizes.Add(new Quiz_list() { Name = result });
+                i++;
+            }
+
+            conn.Close();
         }
     }
 }

@@ -13,7 +13,7 @@ namespace Quizer.Model
         int number_of_info = 10;
         public int integer = 1;
         public long question_number = 0;
-        string quiz_selected = "quiz_1";
+        public string quiz_selected = "quiz_1";
         long score = 0;
 
         bool[] answers = new bool[100];
@@ -37,18 +37,19 @@ namespace Quizer.Model
             SQLiteCommand command;
 
             conn.Open();
-
             command = conn.CreateCommand();
             command.CommandText = $"SELECT count(*) as ile FROM {quiz_selected}";
             reader = command.ExecuteReader();
             reader.Read();
+
             question_number = (long)reader["ile"];
+            conn.Close();
 
 
+            conn.Open();
             command = conn.CreateCommand();
             command.CommandText = $"SELECT * FROM {quiz_selected} where id is {integer}";
             reader = command.ExecuteReader();
-
             reader.Read();
 
             result[1] = "Pytanie nr: " + (long)reader["id"] + "/" + question_number;
@@ -87,6 +88,11 @@ namespace Quizer.Model
             //result[2] = "Wynik: " + score;
             result[3] = "Wynik: " + score + " / " + question_number;
             return result;
+        }
+
+        public void table_list()
+        {
+
         }
 
 

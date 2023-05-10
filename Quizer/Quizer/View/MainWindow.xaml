@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:Quizer"
         xmlns:prop="clr-namespace:Quizer.Properties"
         xmlns:vm="clr-namespace:Quizer.ViewModel"
+        xmlns:viewmodel="clr-namespace:Quizer.ViewModel"  
         
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
@@ -14,6 +15,10 @@
     <Window.DataContext>
         <vm:MainViewModel x:Name="viewModel"/>
     </Window.DataContext>
+
+    <!--<Window.Resources>
+        <viewmodel:MainViewModel x:Key="vm"></viewmodel:MainViewModel>
+    </Window.Resources>-->
 
 
 
@@ -37,26 +42,23 @@
 
 
                 <Grid Grid.Column="0" Margin="5"> <!-- question list  -->
-                    <ComboBox Name="question_list" Height="25">
-                        <ComboBoxItem Content="Coffie"></ComboBoxItem>
-                        <ComboBoxItem Content="Tea"></ComboBoxItem>
-                        <ComboBoxItem Content="Orange Juice"></ComboBoxItem>
-                        <ComboBoxItem Content="Milk"></ComboBoxItem>
-                        <ComboBoxItem Content="Iced Tea"></ComboBoxItem>
-                        <ComboBoxItem Content="Mango Shake"></ComboBoxItem>
-                    </ComboBox>
+                    <ComboBox Name="question_list" 
+                              Height="25" 
+                              ItemsSource="{Binding Quizes}"
+                              SelectedItem="{Binding SelectedItem}"
+                    />
                 </Grid>
+                              <!--ItemsSource="{Binding MyItems}"
+                              ItemsSource="{Binding Path=Persons}"   
+                              SelectedItem="{Binding Path=SPerson}"
+                              SelectionChanged="question_list_SelectionChanged"
+                              SelectedItem="{Binding MySelectedItem}"-->
 
 
 
                 
                 <Grid Grid.Column="1" Margin="5"> <!-- clock -->
                     <Border BorderBrush="#828282" BorderThickness="1,0,1,0">
-                        <!--<TextBlock x:Name="clock" 
-                                   Margin="5"
-                                   Text="{Binding CurrentTime}"
-                        />-->
-
                         <Label Name="lblTime" HorizontalAlignment="Center" VerticalAlignment="Center" />
                     </Border>
                 </Grid>
@@ -71,17 +73,17 @@
 
                     <Grid Grid.Column="0">
                         <Button x:Name="button_start"
-                                    Content="Rozpocznij"
-                                    Margin="2"
-                                    Command="{Binding Info_read}"
+                                Content="Rozpocznij"
+                                Margin="2"
+                                Command="{Binding Info_read}"
                         />
                     </Grid> 
 
                     <Grid Grid.Column="1">
                         <Button x:Name="button_stop"
-                                    Content="Zakończ"
-                                    Margin="2"
-                                    Command="{Binding Info_clear}"
+                                Content="Zakończ"
+                                Margin="2"
+                                Command="{Binding Info_clear}"
                         />
                     </Grid>
                 </Grid>
@@ -112,16 +114,16 @@
                         <Border BorderBrush="#828282" BorderThickness="0,0,0,1">
                             <StackPanel>
                                 <TextBlock x:Name="title" 
-                                            Margin="0,0,0,10"
-                                            Text="{Binding Info[0]}"
+                                           Margin="0,0,0,10"
+                                           Text="{Binding Info[0]}"
                                 />
                                 <TextBlock x:Name="question_name" 
-                                            Margin="0,0,0,10"
-                                            Text="{Binding Info[1]}"
+                                           Margin="0,0,0,10"
+                                           Text="{Binding Info[1]}"
                                 />
                                 <TextBlock x:Name="score" 
-                                            Margin="0,0,0,10"
-                                            Text="{Binding Info[2]}"
+                                           Margin="0,0,0,10"
+                                           Text="{Binding Info[2]}"
                                 />
                             </StackPanel>
                         </Border>
@@ -186,41 +188,41 @@
 
                     <Grid Grid.Row="0" Grid.Column="0">
                         <Button x:Name="answer_1_checked"
-                                    Margin="2"
-                                    Content="{Binding Info[4]}"
-                                    Command="{Binding Answer_1}"
-                                    Background="LightGray"
-                                    Click="answer_1_checked_Click"
+                                Margin="2"
+                                Content="{Binding Info[4]}"
+                                Command="{Binding Answer_1}"
+                                Background="LightGray"
+                                Click="answer_1_checked_Click"
                          />
                     </Grid>
 
                     <Grid Grid.Row="0" Grid.Column="2">
                         <Button x:Name="answer_2_checked"
-                                    Margin="2"
-                                    Content="{Binding Info[5]}"
-                                    Command="{Binding Answer_2}"
-                                    Background="LightGray"
-                                    Click="answer_2_checked_Click"
+                                Margin="2"
+                                Content="{Binding Info[5]}"
+                                Command="{Binding Answer_2}"
+                                Background="LightGray"
+                                Click="answer_2_checked_Click"
                         />
                     </Grid>
 
                     <Grid Grid.Row="1" Grid.Column="0">
                         <Button x:Name="answer_3_checked"
-                                    Margin="2"
-                                    Content="{Binding Info[6]}"
-                                    Command="{Binding Answer_3}"
-                                    Background="LightGray"
-                                    Click="answer_3_checked_Click"
+                                Margin="2"
+                                Content="{Binding Info[6]}"
+                                Command="{Binding Answer_3}"
+                                Background="LightGray"
+                                Click="answer_3_checked_Click"
                         />
                     </Grid>
 
                     <Grid Grid.Row="1" Grid.Column="1">
                         <Button x:Name="answer_4_checked"
-                                    Margin="2"
-                                    Content="{Binding Info[7]}"
-                                    Command="{Binding Answer_4}"
-                                    Background="LightGray"
-                                    Click="answer_4_checked_Click"
+                                Margin="2"
+                                Content="{Binding Info[7]}"
+                                Command="{Binding Answer_4}"
+                                Background="LightGray"
+                                Click="answer_4_checked_Click"
                         />
                     </Grid>
                 </Grid>
