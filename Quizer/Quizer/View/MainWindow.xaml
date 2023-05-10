@@ -133,6 +133,7 @@
                                 Content="Następne pytanie"
                                 Margin="2"
                                 Command="{Binding Info_next_question}"
+                                Click="clear_colors_Click"
                         />
                     </Grid>
 
@@ -142,6 +143,7 @@
                                 Content="Poprzednie pytanie"
                                 Margin="2"
                                 Command="{Binding Info_previous_question}"
+                                Click="clear_colors_Click"
                         />
                     </Grid>
                     
@@ -160,6 +162,8 @@
                 <Grid Grid.Row="0" Margin="5"> <!-- question -->
                     <Border BorderBrush="#828282" BorderThickness="0,0,0,1">
                         <TextBlock x:Name="question"
+                                   FontSize="20"
+                                   TextWrapping="Wrap" 
                                    Text="{Binding Info[3]}"
                         />
                     </Border>
@@ -181,34 +185,42 @@
 
 
                     <Grid Grid.Row="0" Grid.Column="0">
-                        <Button x:Name="answer_1"
+                        <Button x:Name="answer_1_checked"
                                     Margin="2"
                                     Content="{Binding Info[4]}"
                                     Command="{Binding Answer_1}"
+                                    Background="LightGray"
+                                    Click="answer_1_checked_Click"
                          />
                     </Grid>
 
                     <Grid Grid.Row="0" Grid.Column="2">
-                        <Button x:Name="answer_2"
+                        <Button x:Name="answer_2_checked"
                                     Margin="2"
                                     Content="{Binding Info[5]}"
-                                    Command="{Binding Answer_1}"
+                                    Command="{Binding Answer_2}"
+                                    Background="LightGray"
+                                    Click="answer_2_checked_Click"
                         />
                     </Grid>
 
                     <Grid Grid.Row="1" Grid.Column="0">
-                        <Button x:Name="answer_3"
+                        <Button x:Name="answer_3_checked"
                                     Margin="2"
                                     Content="{Binding Info[6]}"
-                                    Command="{Binding Answer_1}"
+                                    Command="{Binding Answer_3}"
+                                    Background="LightGray"
+                                    Click="answer_3_checked_Click"
                         />
                     </Grid>
 
                     <Grid Grid.Row="1" Grid.Column="1">
-                        <Button x:Name="answer_4"
+                        <Button x:Name="answer_4_checked"
                                     Margin="2"
                                     Content="{Binding Info[7]}"
-                                    Command="{Binding Answer_1}"
+                                    Command="{Binding Answer_4}"
+                                    Background="LightGray"
+                                    Click="answer_4_checked_Click"
                         />
                     </Grid>
                 </Grid>

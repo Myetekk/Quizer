@@ -15,7 +15,8 @@ namespace Quizer.ViewModel
         public event PropertyChangedEventHandler PropertyChanged;
         private Model.Quiz info_class = new Model.Quiz();
 
-        private static bool isRun = false;
+        private static bool isRun_start = true;
+        private static bool isRun_stop = false;
         private static bool isRun_next_question = false;
         private static bool isRun_previous_question = false;
         private static bool isRun_answers = false;
@@ -39,15 +40,17 @@ namespace Quizer.ViewModel
         public ICommand Info_read
         {
             get { return info_read ?? (info_read = new BaseClass.RelayCommand( (p) => { 
-                Info = info_class.read(); 
-                isRun = !isRun;
+                Info = info_class.read();
+
+                isRun_start = false;
+                isRun_stop = true;
                 isRun_next_question = true;
                 isRun_previous_question = false;
                 isRun_answers = true;
 
                 MainWindow.time = Convert.ToDateTime("5/7/2023 0:0:0");
                 MainWindow.timer.Start();
-            }, p => !isRun) ); }
+            }, p => isRun_start) ); }
         }
 
 
@@ -55,14 +58,18 @@ namespace Quizer.ViewModel
         public ICommand Info_clear
         {
             get { return info_clear ?? (info_clear = new BaseClass.RelayCommand( (p) => { 
-                Info = info_class.clear(); 
-                isRun = !isRun;
+                //info_class = new Model.Quiz();
+                Info = info_class.clear();
+                Info = info_class.finish();
+
+                isRun_start = false;
+                isRun_stop = false;
                 isRun_next_question = false;
                 isRun_previous_question = false;
                 isRun_answers = false;
 
                 MainWindow.timer.Stop();
-            } ,  p => isRun) ); }
+            } ,  p => isRun_stop) ); }
         }
 
 
@@ -118,50 +125,65 @@ namespace Quizer.ViewModel
             get
             {
                 return answer_1 ?? (answer_1 = new BaseClass.RelayCommand((p) => {
-                    
+                    info_class.answering(1);
+                    //info_class.answers_checked[info_class.integer]
+                    Info = info_class.read();
+                }, p => isRun_answers));
+            }
+        }
+
+        private ICommand answer_2;
+        public ICommand Answer_2
+        {
+            get
+            {
+                return answer_2 ?? (answer_2 = new BaseClass.RelayCommand((p) => {
+                    info_class.answering(2);
+                    Info = info_class.read();
+                }, p => isRun_answers));
+            }
+        }
+
+        private ICommand answer_3;
+        public ICommand Answer_3
+        {
+            get
+            {
+                return answer_3 ?? (answer_3 = new BaseClass.RelayCommand((p) => {
+                    info_class.answering(3);
+                    Info = info_class.read();
+                }, p => isRun_answers));
+            }
+        }
+
+        private ICommand answer_4;
+        public ICommand Answer_4
+        {
+            get
+            {
+                return answer_4 ?? (answer_4 = new BaseClass.RelayCommand((p) => {
+                    info_class.answering(4);
+                    Info = info_class.read();
                 }, p => isRun_answers));
             }
         }
 
 
 
+        private ICommand answer_1_color;
+        public ICommand Answer_1_color
+        {
+            get
+            {
+                return answer_1_color ?? (answer_1_color = new BaseClass.RelayCommand((p) => {
+                    //info_class.answering(1);
+                    //info_class.answers_checked[info_class.integer]
 
 
 
-
-
-        //private string _currentTime;
-        //private void DispatcherTimerSetup()
-        //{
-        //    DispatcherTimer dispatcherTimer = new DispatcherTimer();
-        //    dispatcherTimer.Interval = TimeSpan.FromMinutes(1);
-        //    dispatcherTimer.Tick += new EventHandler(CurrentTimeText);
-        //    dispatcherTimer.Start();
-        //}
-
-        //private void CurrentTimeText(object sender, EventArgs e)
-        //{
-        //    CurrentTime = DateTime.Now.ToString("HH:mm");
-        //}
-
-        //public string CurrentTime
-        //{
-        //    get { return _currentTime; }
-        //    set
-        //    {
-        //        if (_currentTime != value)
-        //            _currentTime = value;
-
-        //        OnPropertyChanged("CurrentTime");
-        //    }
-        //}
-
-        //protected virtual void OnPropertyChanged(string propertyName)
-        //{
-        //    PropertyChangedEventHandler handler = PropertyChanged;
-        //    if (handler != null)
-        //        handler(this, new PropertyChangedEventArgs(propertyName));
-        //}
-
+                    //Info = info_class.read();
+                }, p => isRun_answers));
+            }
+        }
     }
 }
