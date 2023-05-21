@@ -107,40 +107,5 @@ namespace Quizer
             answer_3_colored = false;
             answer_4_colored = false;
         }
-
-        //public void ComboBoxDataBinding()
-        //{
-        //    SQLiteConnection conn = new SQLiteConnection(@"Data Source=D:\MYETEK\Pulpit\data_base.db; Version=3");
-        //    SQLiteDataReader reader;
-        //    SQLiteCommand command;
-        //    string test;
-
-        //    conn.Open();
-            
-        //    command = conn.CreateCommand();
-        //    command.CommandText = $"SELECT name FROM sqlite_master WHERE type = 'table' and name like 'quiz%' ";
-        //    reader = command.ExecuteReader();
-
-        //    while (reader.Read())
-        //    {
-        //        test = (string)reader["name"];
-        //        question_list.Items.Add(test);
-        //    }
-
-        //    conn.Close();
-        //}
-
-        //private void question_list_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        //{
-        //    //Model.Quiz info_class = new Model.Quiz();
-        //    //info_class.quiz_selected = question_list.SelectedItem.ToString();
-
-        //    //ViewModel.MainViewModel info_class.quiz_selected = question_list.SelectedItem.ToString();
-
-
-        //    string selected = question_list.SelectedItem.ToString();
-
-        //    MessageBox.Show(question_list.SelectedItem.ToString());
-        //}
     }
 }

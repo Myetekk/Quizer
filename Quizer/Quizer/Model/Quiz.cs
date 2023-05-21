@@ -9,8 +9,10 @@ namespace Quizer.Model
 {
     class Quiz
     {
-        static SQLiteConnection conn = new SQLiteConnection(@"Data Source=D:\MYETEK\Pulpit\data_base.db; Version=3");
-        int number_of_info = 10;
+        public Model.Read_data reading_data = new Model.Read_data();
+
+        static SQLiteConnection conn = new SQLiteConnection(@"Data Source= .\..\..\..\data_base.db; Version=3");
+        int number_of_info = 8;
         public int integer = 1;
         public long question_number = 0;
         public string quiz_selected = "quiz_1";
@@ -31,38 +33,12 @@ namespace Quizer.Model
 
         public string[] read()
         {
-            string[] result = new string[number_of_info];
-
-            SQLiteDataReader reader;
-            SQLiteCommand command;
-
-            conn.Open();
-            command = conn.CreateCommand();
-            command.CommandText = $"SELECT count(*) as ile FROM {quiz_selected}";
-            reader = command.ExecuteReader();
-            reader.Read();
-
-            question_number = (long)reader["ile"];
-            conn.Close();
+            question_number = reading_data.count_questions(quiz_selected);
 
 
-            conn.Open();
-            command = conn.CreateCommand();
-            command.CommandText = $"SELECT * FROM {quiz_selected} where id is {integer}";
-            reader = command.ExecuteReader();
-            reader.Read();
+            string[] result = reading_data.read_question(number_of_info, quiz_selected, integer, question_number);
+            answer_correct = reading_data.correct_answer(quiz_selected, integer);
 
-            result[1] = "Pytanie nr: " + (long)reader["id"] + "/" + question_number;
-            //result[2] = "Wynik: " + score;
-            result[3] = (string)reader["question"];
-            result[4] = (string)reader["answer_1"];
-            result[5] = (string)reader["answer_2"];
-            result[6] = (string)reader["answer_3"];
-            result[7] = (string)reader["answer_4"];
-            answer_correct = (long)reader["correct"];
-
-
-            conn.Close();
             return result;
         }
 
@@ -85,14 +61,8 @@ namespace Quizer.Model
                 if (answers[i] == true)
                     score++;
             }
-            //result[2] = "Wynik: " + score;
             result[3] = "Wynik: " + score + " / " + question_number;
             return result;
-        }
-
-        public void table_list()
-        {
-
         }
 
 
@@ -119,9 +89,7 @@ namespace Quizer.Model
             if (answer_user == answer_correct)
                 answers[integer] = true;
             else
-            {
                 answers[integer] = false;
-            }
         }
     }
 }

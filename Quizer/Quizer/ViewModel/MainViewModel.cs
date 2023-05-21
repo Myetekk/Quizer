@@ -5,7 +5,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
-using System.Data.SQLite;
 using System.Windows.Threading;
 using System.Collections.ObjectModel;
 
@@ -18,6 +17,7 @@ namespace Quizer.ViewModel
     {
         public event PropertyChangedEventHandler PropertyChanged;
         public Model.Quiz info_class = new Model.Quiz();
+        public Model.Read_data reading_data = new Model.Read_data();
         public string selected;
         public string[] items_in_combobox;
 
@@ -205,36 +205,18 @@ namespace Quizer.ViewModel
 
         public MainViewModel()
         {
-            SQLiteConnection conn = new SQLiteConnection(@"Data Source=D:\MYETEK\Pulpit\data_base.db; Version=3");
-            SQLiteDataReader reader;
-            SQLiteCommand command;
-            string result;
-            long ile;
-            int i = 0;
-
-            conn.Open();
-            command = conn.CreateCommand();
-            command.CommandText = $"SELECT count(*) as ile FROM sqlite_master";
-            reader = command.ExecuteReader();
-            reader.Read();
-            ile = (long)reader["ile"];
+            long ile = reading_data.count_quizes();
             items_in_combobox = new string[ile];
-            conn.Close();
 
-            conn.Open();
-            command = conn.CreateCommand();
-            command.CommandText = $"SELECT name FROM sqlite_master WHERE type = 'table' and name like 'quiz%' ";
-            reader = command.ExecuteReader();
+            string[] result = reading_data.items_to_combobox(ile);
 
-            while (reader.Read())
+            for (int i=0; i<ile; i++)
             {
-                result = (string)reader["name"];
-                items_in_combobox[i] = result;
-                Quizes.Add(new Quiz_list() { Name = result });
-                i++;
+                items_in_combobox[i] = result[i];
+                Quizes.Add(new Quiz_list() { Name = result[i] });
             }
 
-            conn.Close();
+
         }
     }
 }
