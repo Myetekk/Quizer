@@ -208,7 +208,7 @@ namespace QuizApp.ViewModel
                     {
                         if (listIndex == quizList.Count)
                         {
-                            BChecked = CChecked = DChecked = false;
+                            //BChecked = CChecked = DChecked = false; // sprawiało, że tylko odpowaiedź "a" może być poprawna
                             quizList.Add(new Model.Quiz(Question, A, B, C, D, _model.CheckedAnswersToInt(AChecked, BChecked, CChecked, DChecked)));
                             Question = A = B = C = D = "";
                             AChecked = BChecked = CChecked = DChecked = false;

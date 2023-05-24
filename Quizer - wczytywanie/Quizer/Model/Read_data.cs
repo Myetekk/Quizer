@@ -48,8 +48,24 @@ namespace Quizer.Model
             command.CommandText = $"SELECT * FROM {quiz_selected} where id is {integer}";
             reader = command.ExecuteReader();
             reader.Read();
-            long answer_correct = (long)reader["correct"];
+            //long answer_number = (long)reader["correct_answer"];
+            string answer_number = (string)reader["correct_answer"].ToString();
             conn.Close();
+
+            int a = int.Parse(answer_number.Substring(6,2));
+            int b = int.Parse(answer_number.Substring(4,2));
+            int c = int.Parse(answer_number.Substring(2,2));
+            int d = int.Parse(answer_number.Substring(0,2));
+
+            int answer_correct = 0;
+            if (a % 5 == 0)
+                answer_correct = 1;
+            else if (b % 5 == 0)
+                answer_correct = 2;
+            else if (c % 5 == 0)
+                answer_correct = 3;
+            else if (d % 5 == 0)
+                answer_correct = 4;
 
             return answer_correct;
         }

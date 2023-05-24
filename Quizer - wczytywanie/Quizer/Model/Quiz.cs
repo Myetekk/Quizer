@@ -18,14 +18,16 @@ namespace Quizer.Model
         public string quiz_selected = "quiz_1";
         long score = 0;
 
-        bool[] answers = new bool[100];
-        public long[] answers_checked = new long[100];
+        static int max_question_number = 100;
+
+        bool[] answers = new bool[max_question_number];
+        public long[] answers_checked = new long[max_question_number];
         long answer_correct = 0;
 
 
         public Quiz()
         {
-            for (int i = 0; i < 100; i++)
+            for (int i = 0; i < max_question_number; i++)
             {
                 answers[i] = false;
             }
@@ -56,7 +58,7 @@ namespace Quizer.Model
         public string[] finish()
         {
             string[] result = new string[number_of_info];
-            for(int i=0; i<100; i++)
+            for(int i=0; i< max_question_number; i++)
             {
                 if (answers[i] == true)
                     score++;
