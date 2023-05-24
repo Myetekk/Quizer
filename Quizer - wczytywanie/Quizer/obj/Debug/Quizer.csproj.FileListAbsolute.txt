@@ -1,0 +1,75 @@
+C:\Users\mirek\source\repos\Quizer\Quizer\bin\Debug\Quizer.exe.config
+C:\Users\mirek\source\repos\Quizer\Quizer\bin\Debug\Quizer.exe
+C:\Users\mirek\source\repos\Quizer\Quizer\bin\Debug\Quizer.pdb
+C:\Users\mirek\source\repos\Quizer\Quizer\obj\Debug\Quizer.csproj.AssemblyReference.cache
+C:\Users\mirek\source\repos\Quizer\Quizer\obj\Debug\View\MainWindow.g.cs
+C:\Users\mirek\source\repos\Quizer\Quizer\obj\Debug\App.g.cs
+C:\Users\mirek\source\repos\Quizer\Quizer\obj\Debug\Quizer_MarkupCompile.cache
+C:\Users\mirek\source\repos\Quizer\Quizer\obj\Debug\Quizer_MarkupCompile.lref
+C:\Users\mirek\source\repos\Quizer\Quizer\obj\Debug\View\MainWindow.baml
+C:\Users\mirek\source\repos\Quizer\Quizer\obj\Debug\Quizer.g.resources
+C:\Users\mirek\source\repos\Quizer\Quizer\obj\Debug\Quizer.Properties.Resources.resources
+C:\Users\mirek\source\repos\Quizer\Quizer\obj\Debug\Quizer.csproj.GenerateResource.cache
+C:\Users\mirek\source\repos\Quizer\Quizer\obj\Debug\Quizer.csproj.CoreCompileInputs.cache
+C:\Users\mirek\source\repos\Quizer\Quizer\obj\Debug\Quizer.exe
+C:\Users\mirek\source\repos\Quizer\Quizer\obj\Debug\Quizer.pdb
+C:\Users\mirek\source\repos\Quizer\Quizer\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\mirek\source\repos\Quizer\Quizer\bin\Debug\EntityFramework.dll
+C:\Users\mirek\source\repos\Quizer\Quizer\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\mirek\source\repos\Quizer\Quizer\bin\Debug\System.Data.SQLite.dll
+C:\Users\mirek\source\repos\Quizer\Quizer\bin\Debug\System.Data.SQLite.EF6.dll
+C:\Users\mirek\source\repos\Quizer\Quizer\bin\Debug\System.Data.SQLite.Linq.dll
+C:\Users\mirek\source\repos\Quizer\Quizer\bin\Debug\EntityFramework.xml
+C:\Users\mirek\source\repos\Quizer\Quizer\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\mirek\source\repos\Quizer\Quizer\bin\Debug\System.Data.SQLite.xml
+C:\Users\mirek\source\repos\Quizer\Quizer\obj\Debug\Quizer.csproj.CopyComplete
+D:\Github\Quizer\Quizer\Quizer\bin\Debug\Quizer.exe.config
+D:\Github\Quizer\Quizer\Quizer\bin\Debug\Quizer.exe
+D:\Github\Quizer\Quizer\Quizer\bin\Debug\Quizer.pdb
+D:\Github\Quizer\Quizer\Quizer\bin\Debug\EntityFramework.dll
+D:\Github\Quizer\Quizer\Quizer\bin\Debug\EntityFramework.SqlServer.dll
+D:\Github\Quizer\Quizer\Quizer\bin\Debug\System.Data.SQLite.dll
+D:\Github\Quizer\Quizer\Quizer\bin\Debug\System.Data.SQLite.EF6.dll
+D:\Github\Quizer\Quizer\Quizer\bin\Debug\System.Data.SQLite.Linq.dll
+D:\Github\Quizer\Quizer\Quizer\bin\Debug\EntityFramework.xml
+D:\Github\Quizer\Quizer\Quizer\bin\Debug\EntityFramework.SqlServer.xml
+D:\Github\Quizer\Quizer\Quizer\bin\Debug\System.Data.SQLite.xml
+D:\Github\Quizer\Quizer\Quizer\obj\Debug\Quizer.csproj.AssemblyReference.cache
+D:\Github\Quizer\Quizer\Quizer\obj\Debug\View\MainWindow.g.cs
+D:\Github\Quizer\Quizer\Quizer\obj\Debug\App.g.cs
+D:\Github\Quizer\Quizer\Quizer\obj\Debug\GeneratedInternalTypeHelper.g.cs
+D:\Github\Quizer\Quizer\Quizer\obj\Debug\Quizer_MarkupCompile.cache
+D:\Github\Quizer\Quizer\Quizer\obj\Debug\Quizer_MarkupCompile.lref
+D:\Github\Quizer\Quizer\Quizer\obj\Debug\View\MainWindow.baml
+D:\Github\Quizer\Quizer\Quizer\obj\Debug\Quizer.g.resources
+D:\Github\Quizer\Quizer\Quizer\obj\Debug\Quizer.Properties.Resources.resources
+D:\Github\Quizer\Quizer\Quizer\obj\Debug\Quizer.csproj.GenerateResource.cache
+D:\Github\Quizer\Quizer\Quizer\obj\Debug\Quizer.csproj.CoreCompileInputs.cache
+D:\Github\Quizer\Quizer\Quizer\obj\Debug\Quizer.csproj.CopyComplete
+D:\Github\Quizer\Quizer\Quizer\obj\Debug\Quizer.exe
+D:\Github\Quizer\Quizer\Quizer\obj\Debug\Quizer.pdb
+D:\Github\Quizer\Quizer - wczytywanie\Quizer\bin\Debug\Quizer.exe.config
+D:\Github\Quizer\Quizer - wczytywanie\Quizer\bin\Debug\Quizer.exe
+D:\Github\Quizer\Quizer - wczytywanie\Quizer\bin\Debug\Quizer.pdb
+D:\Github\Quizer\Quizer - wczytywanie\Quizer\bin\Debug\EntityFramework.dll
+D:\Github\Quizer\Quizer - wczytywanie\Quizer\bin\Debug\EntityFramework.SqlServer.dll
+D:\Github\Quizer\Quizer - wczytywanie\Quizer\bin\Debug\System.Data.SQLite.dll
+D:\Github\Quizer\Quizer - wczytywanie\Quizer\bin\Debug\System.Data.SQLite.EF6.dll
+D:\Github\Quizer\Quizer - wczytywanie\Quizer\bin\Debug\System.Data.SQLite.Linq.dll
+D:\Github\Quizer\Quizer - wczytywanie\Quizer\bin\Debug\EntityFramework.xml
+D:\Github\Quizer\Quizer - wczytywanie\Quizer\bin\Debug\EntityFramework.SqlServer.xml
+D:\Github\Quizer\Quizer - wczytywanie\Quizer\bin\Debug\System.Data.SQLite.xml
+D:\Github\Quizer\Quizer - wczytywanie\Quizer\obj\Debug\Quizer.csproj.AssemblyReference.cache
+D:\Github\Quizer\Quizer - wczytywanie\Quizer\obj\Debug\View\MainWindow.g.cs
+D:\Github\Quizer\Quizer - wczytywanie\Quizer\obj\Debug\App.g.cs
+D:\Github\Quizer\Quizer - wczytywanie\Quizer\obj\Debug\GeneratedInternalTypeHelper.g.cs
+D:\Github\Quizer\Quizer - wczytywanie\Quizer\obj\Debug\Quizer_MarkupCompile.cache
+D:\Github\Quizer\Quizer - wczytywanie\Quizer\obj\Debug\Quizer_MarkupCompile.lref
+D:\Github\Quizer\Quizer - wczytywanie\Quizer\obj\Debug\View\MainWindow.baml
+D:\Github\Quizer\Quizer - wczytywanie\Quizer\obj\Debug\Quizer.g.resources
+D:\Github\Quizer\Quizer - wczytywanie\Quizer\obj\Debug\Quizer.Properties.Resources.resources
+D:\Github\Quizer\Quizer - wczytywanie\Quizer\obj\Debug\Quizer.csproj.GenerateResource.cache
+D:\Github\Quizer\Quizer - wczytywanie\Quizer\obj\Debug\Quizer.csproj.CoreCompileInputs.cache
+D:\Github\Quizer\Quizer - wczytywanie\Quizer\obj\Debug\Quizer.csproj.CopyComplete
+D:\Github\Quizer\Quizer - wczytywanie\Quizer\obj\Debug\Quizer.exe
+D:\Github\Quizer\Quizer - wczytywanie\Quizer\obj\Debug\Quizer.pdb

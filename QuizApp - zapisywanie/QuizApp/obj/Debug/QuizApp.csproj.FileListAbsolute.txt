@@ -1,0 +1,84 @@
+C:\Users\Admin\Documents\_------STUDIA------\prog_ob\QuizApp\QuizApp\bin\Debug\QuizApp.exe.config
+C:\Users\Admin\Documents\_------STUDIA------\prog_ob\QuizApp\QuizApp\bin\Debug\QuizApp.exe
+C:\Users\Admin\Documents\_------STUDIA------\prog_ob\QuizApp\QuizApp\bin\Debug\QuizApp.pdb
+C:\Users\Admin\Documents\_------STUDIA------\prog_ob\QuizApp\QuizApp\obj\Debug\QuizApp.csproj.AssemblyReference.cache
+C:\Users\Admin\Documents\_------STUDIA------\prog_ob\QuizApp\QuizApp\obj\Debug\MainWindow.g.cs
+C:\Users\Admin\Documents\_------STUDIA------\prog_ob\QuizApp\QuizApp\obj\Debug\App.g.cs
+C:\Users\Admin\Documents\_------STUDIA------\prog_ob\QuizApp\QuizApp\obj\Debug\QuizApp_MarkupCompile.cache
+C:\Users\Admin\Documents\_------STUDIA------\prog_ob\QuizApp\QuizApp\obj\Debug\QuizApp_MarkupCompile.lref
+C:\Users\Admin\Documents\_------STUDIA------\prog_ob\QuizApp\QuizApp\obj\Debug\MainWindow.baml
+C:\Users\Admin\Documents\_------STUDIA------\prog_ob\QuizApp\QuizApp\obj\Debug\QuizApp.g.resources
+C:\Users\Admin\Documents\_------STUDIA------\prog_ob\QuizApp\QuizApp\obj\Debug\QuizApp.Properties.Resources.resources
+C:\Users\Admin\Documents\_------STUDIA------\prog_ob\QuizApp\QuizApp\obj\Debug\QuizApp.csproj.GenerateResource.cache
+C:\Users\Admin\Documents\_------STUDIA------\prog_ob\QuizApp\QuizApp\obj\Debug\QuizApp.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Documents\_------STUDIA------\prog_ob\QuizApp\QuizApp\obj\Debug\QuizApp.exe
+C:\Users\Admin\Documents\_------STUDIA------\prog_ob\QuizApp\QuizApp\obj\Debug\QuizApp.pdb
+C:\Users\Admin\Documents\_------STUDIA------\prog_ob\QuizApp\QuizApp\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\Admin\Documents\_------STUDIA------\prog_ob\QuizApp\QuizApp\bin\Debug\System.Data.SQLite.dll
+C:\Users\Admin\Documents\_------STUDIA------\prog_ob\QuizApp\QuizApp\bin\Debug\System.Data.SQLite.xml
+C:\Users\Admin\Documents\_------STUDIA------\prog_ob\QuizApp\QuizApp\obj\Debug\QuizApp.csproj.CopyComplete
+C:\Users\Admin\Documents\_------STUDIA------\prog_ob\QuizApp\QuizApp\bin\Debug\bazaQuiz.db
+C:\Users\Admin\Documents\_------STUDIA------\prog_ob\QuizApp\QuizApp\obj\Debug\QuizApp_Content.g.cs
+C:\Users\mirek\Source\Repos\QuizApp\QuizApp\QuizApp\bin\Debug\bazaQuiz.db
+C:\Users\mirek\Source\Repos\QuizApp\QuizApp\QuizApp\bin\Debug\QuizApp.exe.config
+C:\Users\mirek\Source\Repos\QuizApp\QuizApp\QuizApp\bin\Debug\QuizApp.exe
+C:\Users\mirek\Source\Repos\QuizApp\QuizApp\QuizApp\bin\Debug\QuizApp.pdb
+C:\Users\mirek\Source\Repos\QuizApp\QuizApp\QuizApp\bin\Debug\System.Data.SQLite.dll
+C:\Users\mirek\Source\Repos\QuizApp\QuizApp\QuizApp\bin\Debug\System.Data.SQLite.xml
+C:\Users\mirek\Source\Repos\QuizApp\QuizApp\QuizApp\obj\Debug\QuizApp.csproj.AssemblyReference.cache
+C:\Users\mirek\Source\Repos\QuizApp\QuizApp\QuizApp\obj\Debug\MainWindow.g.cs
+C:\Users\mirek\Source\Repos\QuizApp\QuizApp\QuizApp\obj\Debug\App.g.cs
+C:\Users\mirek\Source\Repos\QuizApp\QuizApp\QuizApp\obj\Debug\QuizApp_Content.g.cs
+C:\Users\mirek\Source\Repos\QuizApp\QuizApp\QuizApp\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\mirek\Source\Repos\QuizApp\QuizApp\QuizApp\obj\Debug\QuizApp_MarkupCompile.cache
+C:\Users\mirek\Source\Repos\QuizApp\QuizApp\QuizApp\obj\Debug\QuizApp_MarkupCompile.lref
+C:\Users\mirek\Source\Repos\QuizApp\QuizApp\QuizApp\obj\Debug\MainWindow.baml
+C:\Users\mirek\Source\Repos\QuizApp\QuizApp\QuizApp\obj\Debug\QuizApp.g.resources
+C:\Users\mirek\Source\Repos\QuizApp\QuizApp\QuizApp\obj\Debug\QuizApp.Properties.Resources.resources
+C:\Users\mirek\Source\Repos\QuizApp\QuizApp\QuizApp\obj\Debug\QuizApp.csproj.GenerateResource.cache
+C:\Users\mirek\Source\Repos\QuizApp\QuizApp\QuizApp\obj\Debug\QuizApp.csproj.CoreCompileInputs.cache
+C:\Users\mirek\Source\Repos\QuizApp\QuizApp\QuizApp\obj\Debug\QuizApp.csproj.CopyComplete
+C:\Users\mirek\Source\Repos\QuizApp\QuizApp\QuizApp\obj\Debug\QuizApp.exe
+C:\Users\mirek\Source\Repos\QuizApp\QuizApp\QuizApp\obj\Debug\QuizApp.pdb
+D:\Github\Quizer\QuizApp - zapisywanie\QuizApp\QuizApp\bin\Debug\bazaQuiz.db
+D:\Github\Quizer\QuizApp - zapisywanie\QuizApp\QuizApp\bin\Debug\QuizApp.exe.config
+D:\Github\Quizer\QuizApp - zapisywanie\QuizApp\QuizApp\bin\Debug\QuizApp.exe
+D:\Github\Quizer\QuizApp - zapisywanie\QuizApp\QuizApp\bin\Debug\QuizApp.pdb
+D:\Github\Quizer\QuizApp - zapisywanie\QuizApp\QuizApp\bin\Debug\System.Data.SQLite.dll
+D:\Github\Quizer\QuizApp - zapisywanie\QuizApp\QuizApp\bin\Debug\System.Data.SQLite.xml
+D:\Github\Quizer\QuizApp - zapisywanie\QuizApp\QuizApp\obj\Debug\QuizApp.csproj.AssemblyReference.cache
+D:\Github\Quizer\QuizApp - zapisywanie\QuizApp\QuizApp\obj\Debug\MainWindow.g.cs
+D:\Github\Quizer\QuizApp - zapisywanie\QuizApp\QuizApp\obj\Debug\App.g.cs
+D:\Github\Quizer\QuizApp - zapisywanie\QuizApp\QuizApp\obj\Debug\QuizApp_Content.g.cs
+D:\Github\Quizer\QuizApp - zapisywanie\QuizApp\QuizApp\obj\Debug\GeneratedInternalTypeHelper.g.cs
+D:\Github\Quizer\QuizApp - zapisywanie\QuizApp\QuizApp\obj\Debug\QuizApp_MarkupCompile.cache
+D:\Github\Quizer\QuizApp - zapisywanie\QuizApp\QuizApp\obj\Debug\QuizApp_MarkupCompile.lref
+D:\Github\Quizer\QuizApp - zapisywanie\QuizApp\QuizApp\obj\Debug\MainWindow.baml
+D:\Github\Quizer\QuizApp - zapisywanie\QuizApp\QuizApp\obj\Debug\QuizApp.g.resources
+D:\Github\Quizer\QuizApp - zapisywanie\QuizApp\QuizApp\obj\Debug\QuizApp.Properties.Resources.resources
+D:\Github\Quizer\QuizApp - zapisywanie\QuizApp\QuizApp\obj\Debug\QuizApp.csproj.GenerateResource.cache
+D:\Github\Quizer\QuizApp - zapisywanie\QuizApp\QuizApp\obj\Debug\QuizApp.csproj.CoreCompileInputs.cache
+D:\Github\Quizer\QuizApp - zapisywanie\QuizApp\QuizApp\obj\Debug\QuizApp.csproj.CopyComplete
+D:\Github\Quizer\QuizApp - zapisywanie\QuizApp\QuizApp\obj\Debug\QuizApp.exe
+D:\Github\Quizer\QuizApp - zapisywanie\QuizApp\QuizApp\obj\Debug\QuizApp.pdb
+D:\Github\Quizer\QuizApp - zapisywanie\QuizApp\bin\Debug\bazaQuiz.db
+D:\Github\Quizer\QuizApp - zapisywanie\QuizApp\bin\Debug\QuizApp.exe.config
+D:\Github\Quizer\QuizApp - zapisywanie\QuizApp\bin\Debug\QuizApp.exe
+D:\Github\Quizer\QuizApp - zapisywanie\QuizApp\bin\Debug\QuizApp.pdb
+D:\Github\Quizer\QuizApp - zapisywanie\QuizApp\bin\Debug\System.Data.SQLite.dll
+D:\Github\Quizer\QuizApp - zapisywanie\QuizApp\bin\Debug\System.Data.SQLite.xml
+D:\Github\Quizer\QuizApp - zapisywanie\QuizApp\obj\Debug\QuizApp.csproj.AssemblyReference.cache
+D:\Github\Quizer\QuizApp - zapisywanie\QuizApp\obj\Debug\MainWindow.g.cs
+D:\Github\Quizer\QuizApp - zapisywanie\QuizApp\obj\Debug\App.g.cs
+D:\Github\Quizer\QuizApp - zapisywanie\QuizApp\obj\Debug\QuizApp_Content.g.cs
+D:\Github\Quizer\QuizApp - zapisywanie\QuizApp\obj\Debug\GeneratedInternalTypeHelper.g.cs
+D:\Github\Quizer\QuizApp - zapisywanie\QuizApp\obj\Debug\QuizApp_MarkupCompile.cache
+D:\Github\Quizer\QuizApp - zapisywanie\QuizApp\obj\Debug\QuizApp_MarkupCompile.lref
+D:\Github\Quizer\QuizApp - zapisywanie\QuizApp\obj\Debug\MainWindow.baml
+D:\Github\Quizer\QuizApp - zapisywanie\QuizApp\obj\Debug\QuizApp.g.resources
+D:\Github\Quizer\QuizApp - zapisywanie\QuizApp\obj\Debug\QuizApp.Properties.Resources.resources
+D:\Github\Quizer\QuizApp - zapisywanie\QuizApp\obj\Debug\QuizApp.csproj.GenerateResource.cache
+D:\Github\Quizer\QuizApp - zapisywanie\QuizApp\obj\Debug\QuizApp.csproj.CoreCompileInputs.cache
+D:\Github\Quizer\QuizApp - zapisywanie\QuizApp\obj\Debug\QuizApp.csproj.CopyComplete
+D:\Github\Quizer\QuizApp - zapisywanie\QuizApp\obj\Debug\QuizApp.exe
+D:\Github\Quizer\QuizApp - zapisywanie\QuizApp\obj\Debug\QuizApp.pdb
