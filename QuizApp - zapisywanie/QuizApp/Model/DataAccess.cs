@@ -4,6 +4,8 @@ using System.Linq;
 using System.Data.SQLite;
 using System.Text;
 using System.Threading.Tasks;
+using System.Security.Cryptography;
+using System.IO;
 
 namespace QuizApp.Model
 {
@@ -31,9 +33,10 @@ namespace QuizApp.Model
                 $"answer_2 TEXT," +
                 $"answer_3 TEXT," +
                 $"answer_4 TEXT," +
-                $"correct_answer INTEGER);";
+                $"correct_answer TEXT);";
             command.ExecuteNonQuery();
 
+                //$"correct_answer INTEGER);";
         }
 
         private void ReadData(SQLiteConnection conn, List<Quiz> quizzes, string chosenName)
@@ -43,11 +46,22 @@ namespace QuizApp.Model
             //SQLiteDataReader reader;
             SQLiteCommand command;
 
+            var key = "b14ca5898a4e4133bbce2ea2315a1916";
+
             command = conn.CreateCommand();
             foreach (Quiz quizQuest in quizzes)
             {
+                quizQuest.QuizQuestion = EncryptString(key, quizQuest.QuizQuestion);
+                quizQuest.AAnswer = EncryptString(key, quizQuest.AAnswer);
+                quizQuest.BAnswer = EncryptString(key, quizQuest.BAnswer);
+                quizQuest.CAnswer = EncryptString(key, quizQuest.CAnswer);
+                quizQuest.DAnswer = EncryptString(key, quizQuest.DAnswer);
+                string Correct = EncryptString(key, quizQuest.Correct.ToString());
+
+
                 command.CommandText = $"INSERT INTO {chosenName} (question, answer_1, answer_2, answer_3, answer_4, correct_answer)" +
-                $"VALUES ('{quizQuest.QuizQuestion}', '{quizQuest.AAnswer}', '{quizQuest.BAnswer}', '{quizQuest.CAnswer}', '{quizQuest.DAnswer}', {quizQuest.Correct});";
+                //$"VALUES ('{quizQuest.QuizQuestion}', '{quizQuest.AAnswer}', '{quizQuest.BAnswer}', '{quizQuest.CAnswer}', '{quizQuest.DAnswer}', '{quizQuest.Correct}');";
+                $"VALUES ('{quizQuest.QuizQuestion}', '{quizQuest.AAnswer}', '{quizQuest.BAnswer}', '{quizQuest.CAnswer}', '{quizQuest.DAnswer}', '{Correct}');";
                 command.ExecuteNonQuery();
             }
 
@@ -87,6 +101,35 @@ namespace QuizApp.Model
             }
         }
 
-        
+        private string EncryptString(string key, string plainText)
+        {
+            byte[] iv = new byte[16];
+            byte[] array;
+
+            using (Aes aes = Aes.Create())
+            {
+                aes.Key = Encoding.UTF8.GetBytes(key);
+                aes.IV = iv;
+
+                ICryptoTransform encryptor = aes.CreateEncryptor(aes.Key, aes.IV);
+
+                using (MemoryStream memoryStream = new MemoryStream())
+                {
+                    using (CryptoStream cryptoStream = new CryptoStream((Stream)memoryStream, encryptor, CryptoStreamMode.Write))
+                    {
+                        using (StreamWriter streamWriter = new StreamWriter((Stream)cryptoStream))
+                        {
+                            streamWriter.Write(plainText);
+                        }
+
+                        array = memoryStream.ToArray();
+                    }
+                }
+            }
+
+            return Convert.ToBase64String(array);
+        }
+
+
     }
 }

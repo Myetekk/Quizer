@@ -33,8 +33,7 @@ namespace QuizApp.Model
 
             int finalNumber = 0;
 
-            //bool[] answers = { d, c, b, a }; // kolejnosc odwrotna zeby na koncu po dodaniu bylo D a na poczatku A
-            bool[] answers = { a, b, c, d }; // kolejność tu normalna, ponieważ później dodajemy na początek liczby "finalNumber" (przez leap * 100) i w efekcie dostajemy odwrócone
+            bool[] answers = { d, c, b, a }; // kolejnosc odwrotna zeby na koncu po dodaniu bylo D a na poczatku A
             int leap = 1;
             
             for (int i = 0; i <= 3; i++)

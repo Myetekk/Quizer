@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SQLite;
+using System.Security.Cryptography;
+using System.IO;
 
 namespace Quizer.Model
 {
@@ -21,6 +23,7 @@ namespace Quizer.Model
         public string[] read_question(int number_of_info, string quiz_selected, int integer, long question_number)
         {
             string[] result = new string[number_of_info];
+            var key = "b14ca5898a4e4133bbce2ea2315a1916";
 
             conn.Open();
             command = conn.CreateCommand();
@@ -30,11 +33,17 @@ namespace Quizer.Model
 
             result[0] = quiz_selected;
             result[1] = "Pytanie nr: " + (long)reader["id"] + "/" + question_number;
-            result[3] = (string)reader["question"];
-            result[4] = (string)reader["answer_1"];
-            result[5] = (string)reader["answer_2"];
-            result[6] = (string)reader["answer_3"];
-            result[7] = (string)reader["answer_4"];
+            //result[3] = (string)reader["question"];
+            //result[4] = (string)reader["answer_1"];
+            //result[5] = (string)reader["answer_2"];
+            //result[6] = (string)reader["answer_3"];
+            //result[7] = (string)reader["answer_4"];
+
+            result[3] = DecryptString(key, (string)reader["question"]);
+            result[4] = DecryptString(key, (string)reader["answer_1"]);
+            result[5] = DecryptString(key, (string)reader["answer_2"]);
+            result[6] = DecryptString(key, (string)reader["answer_3"]);
+            result[7] = DecryptString(key, (string)reader["answer_4"]);
 
             conn.Close();
 
@@ -43,19 +52,22 @@ namespace Quizer.Model
 
         public long correct_answer(string quiz_selected, int integer)
         {
+            var key = "b14ca5898a4e4133bbce2ea2315a1916";
+
             conn.Open();
             command = conn.CreateCommand();
             command.CommandText = $"SELECT * FROM {quiz_selected} where id is {integer}";
             reader = command.ExecuteReader();
             reader.Read();
             //long answer_number = (long)reader["correct_answer"];
-            string answer_number = (string)reader["correct_answer"].ToString();
+            //string answer_number = (string)reader["correct_answer"];
+            string answer_number = DecryptString(key, (string)reader["correct_answer"]);
             conn.Close();
 
-            int a = int.Parse(answer_number.Substring(6,2));
-            int b = int.Parse(answer_number.Substring(4,2));
-            int c = int.Parse(answer_number.Substring(2,2));
-            int d = int.Parse(answer_number.Substring(0,2));
+            int d = int.Parse(answer_number.Substring(6,2));
+            int c = int.Parse(answer_number.Substring(4,2));
+            int b = int.Parse(answer_number.Substring(2,2));
+            int a = int.Parse(answer_number.Substring(0,2));
 
             int answer_correct = 0;
             if (a % 5 == 0)
@@ -116,6 +128,30 @@ namespace Quizer.Model
             conn.Close();
 
             return result;
+        }
+
+        private static string DecryptString(string key, string cipherText)
+        {
+            byte[] iv = new byte[16];
+            byte[] buffer = Convert.FromBase64String(cipherText);
+
+            using (Aes aes = Aes.Create())
+            {
+                aes.Key = Encoding.UTF8.GetBytes(key);
+                aes.IV = iv;
+                ICryptoTransform decryptor = aes.CreateDecryptor(aes.Key, aes.IV);
+
+                using (MemoryStream memoryStream = new MemoryStream(buffer))
+                {
+                    using (CryptoStream cryptoStream = new CryptoStream((Stream)memoryStream, decryptor, CryptoStreamMode.Read))
+                    {
+                        using (StreamReader streamReader = new StreamReader((Stream)cryptoStream))
+                        {
+                            return streamReader.ReadToEnd();
+                        }
+                    }
+                }
+            }
         }
     }
 }
